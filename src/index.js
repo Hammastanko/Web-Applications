@@ -152,6 +152,9 @@ function newMove(square) {
   if (document.winner === null) {
     if (square.innerText === "") {
       square.innerText = document.turn;
+      //jatka tästä
+      square.style.backgroundColor = "#7CFC00";
+
       switchTurn();
     } else {
       setInformation(
