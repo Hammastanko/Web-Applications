@@ -152,8 +152,7 @@ function newMove(square) {
   if (document.winner === null) {
     if (square.innerText === "") {
       square.innerText = document.turn;
-      //jatka tästä
-      square.style.backgroundColor = "#7CFC00";
+      changeBackground(document.turn, square);
 
       switchTurn();
     } else {
@@ -222,4 +221,36 @@ function checkRow(a, b, c, d, e, move) {
 
 function getSquareValue(qNumber) {
   return document.getElementById("q" + qNumber).innerText;
+}
+
+function changeBackground(turn, square) {
+  if (turn === "X") {
+    square.style.backgroundColor = "#7CFC00";
+    //RGB code 124, 252, 0
+  } else {
+    square.style.backgroundColor = "#FA8072";
+    //RGB code 250, 128, 114
+  }
+
+  function move() {
+    var elem = document.getElementById("myBar");
+    var width = 0;
+    var id = setInterval(frame, 50);
+    function frame() {
+      if (width >= 100) {
+        clearInterval(id);
+        document.getElementById("myP").className =
+          "w3-text-green w3-animate-opacity";
+        document.getElementById("myP").innerHTML =
+          "Successfully uploaded 10 photos!";
+      } else {
+        0;
+        width++;
+        elem.style.width = width + "%";
+        var num = (width * 1) / 10;
+        num = num.toFixed(0);
+        document.getElementById("demo").innerHTML = num;
+      }
+    }
+  }
 }
