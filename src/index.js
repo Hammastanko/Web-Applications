@@ -153,7 +153,6 @@ function newMove(square) {
     if (square.innerText === "") {
       square.innerText = document.turn;
       changeBackground(document.turn, square);
-
       switchTurn();
     } else {
       setInformation(
@@ -164,6 +163,7 @@ function newMove(square) {
 }
 
 function switchTurn() {
+  progress();
   if (checkWin(document.turn)) {
     setInformation(document.turn + " Won!");
     document.winner = document.turn;
@@ -179,6 +179,32 @@ function switchTurn() {
     document.turn = "X";
     setInformation("It is " + document.turn + "'s turn!");
   }
+}
+
+function progress() {
+  var timeleft = 10;
+  var downloadTimer = setInterval(function() {
+    timeleft -= 1;
+    document.getElementById("progressBar").value = 10 - timeleft;
+    if (timeleft <= 0) {
+      clearInterval(downloadTimer);
+    }
+  }, 1000);
+
+  var textTimer = 10;
+  var downloadTimer2 = setInterval(function() {
+    document.getElementById("time").innerHTML = textTimer;
+    if (textTimer <= 0) {
+      clearInterval(downloadTimer2);
+      switchTurn();
+    }
+    textTimer -= 1;
+  }, 1000);
+}
+
+function clearProgress() {
+  document.getElementById("progressBar").value = 0;
+  document.getElementById("time").innerHTML = 10;
 }
 
 function checkWin(move) {
