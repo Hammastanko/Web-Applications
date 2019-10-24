@@ -1,5 +1,5 @@
 import "./styles.css";
-//Made by Eero Peltola This is a test 2
+//Made by Eero Peltola
 
 if (document.readyState !== "loading") {
   // Document ready, executing
