@@ -12,6 +12,26 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
     />
 
+    <style>
+      .row > div {
+        background: #ddd;
+        border: 1px solid black;
+        height: 60px;
+        width: 60px;
+        text-align: center;
+        vertical-align: center;
+      }
+      .row > div > button {
+        background: #ddd;
+        font-size: 30px;
+        height: 60px;
+        width: 60px;
+      }
+      .row {
+        border-collapse: collapse;
+      }
+    </style>
+
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tic Tac Toe using materialize</title>
@@ -20,44 +40,55 @@
   <body>
     <div class="container">
       <h3>Tic Tac Toe</h3>
+      <div id="information">It is X's turn!</div>
+      <p id="myP">Time left: <span id="time"></span> seconds!</p>
       <div class="progress">
-        <div class="determinate" style="width:20%"></div>
+        <div class="determinate" id="progressBar" value="0" max="10"></div>
       </div>
 
       <div class="row">
-        <div class="col s1"><div class="btn btn">1</div></div>
-        <div class="col s1"><div class="btn btn">2</div></div>
-        <div class="col s1"><div class="btn btn">3</div></div>
-        <div class="col s1"><div class="btn btn">4</div></div>
-        <div class="col s1 push s8"><div class="btn btn">5</div></div>
+        <div class="col s2"><button id="q0"></button></div>
+        <div class="col s2"><button id="q1"></button></div>
+        <div class="col s2"><button id="q2"></button></div>
+        <div class="col s2"><button id="q3"></button></div>
+        <div class="col s2"><button id="q4"></button></div>
+      </div>
 
-        <div class="col s1"><div class="btn btn">1</div></div>
-        <div class="col s1"><div class="btn btn">2</div></div>
-        <div class="col s1"><div class="btn btn">3</div></div>
-        <div class="col s1"><div class="btn btn">4</div></div>
-        <div class="col s1 push s8"><div class="btn btn">5</div></div>
+      <div class="row">
+        <div class="col s2"><button id="q5"></button></div>
+        <div class="col s2"><button id="q6"></button></div>
+        <div class="col s2"><button id="q7"></button></div>
+        <div class="col s2"><button id="q8"></button></div>
+        <div class="col s2"><button id="q9"></button></div>
+      </div>
 
-        <div class="col s1"><div class="btn btn">1</div></div>
-        <div class="col s1"><div class="btn btn">2</div></div>
-        <div class="col s1"><div class="btn btn">3</div></div>
-        <div class="col s1"><div class="btn btn">4</div></div>
-        <div class="col s1 push s8"><div class="btn btn">5</div></div>
+      <div class="row">
+        <div class="col s2"><button id="q10"></button></div>
+        <div class="col s2"><button id="q11"></button></div>
+        <div class="col s2"><button id="q12"></button></div>
+        <div class="col s2"><button id="q13"></button></div>
+        <div class="col s2"><button id="q14"></button></div>
+      </div>
 
-        <div class="col s1"><div class="btn btn">1</div></div>
-        <div class="col s1"><div class="btn btn">2</div></div>
-        <div class="col s1"><div class="btn btn">3</div></div>
-        <div class="col s1"><div class="btn btn">4</div></div>
-        <div class="col s1 push s8"><div class="btn btn">5</div></div>
+      <div class="row">
+        <div class="col s2"><button id="q15"></button></div>
+        <div class="col s2"><button id="q16"></button></div>
+        <div class="col s2"><button id="q17"></button></div>
+        <div class="col s2"><button id="q18"></button></div>
+        <div class="col s2"><button id="q19"></button></div>
+      </div>
 
-        <div class="col s1"><div class="btn btn">1</div></div>
-        <div class="col s1"><div class="btn btn">2</div></div>
-        <div class="col s1"><div class="btn btn">3</div></div>
-        <div class="col s1"><div class="btn btn">4</div></div>
-        <div class="col s1 push s8"><div class="btn btn">5</div></div>
+      <div class="row">
+        <div class="col s2"><button id="q20"></button></div>
+        <div class="col s2"><button id="q21"></button></div>
+        <div class="col s2"><button id="q22"></button></div>
+        <div class="col s2"><button id="q23"></button></div>
+        <div class="col s2"><button id="q24"></button></div>
       </div>
     </div>
 
     <!--JavaScript at end of body for optimized loading-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="src/index.js"></script>
   </body>
 </html>

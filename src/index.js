@@ -20,6 +20,7 @@ function initializeCode() {
 
   const q0button = document.getElementById("q0");
   q0button.addEventListener("mousedown", event => {
+    console.log("successful press");
     newMove(q0);
     event.stopPropagation();
   });

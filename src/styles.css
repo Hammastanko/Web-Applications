@@ -13,28 +13,26 @@ body {
   text-align: center;
   vertical-align: center;
   font-size: 30px;
+  text-align: center;
+  vertical-align: center;
   border-collapse: collapse;
-  
 }
 
-.container{
+.container {
   padding: 15px;
-
 }
 
-#progressbarContainer{
-  height:24px;
-  width:300px;
+#progressbarContainer {
+  height: 24px;
+  width: 300px;
   background-color: #ddd;
 }
 
-#progress{
+#progress {
   width: 1%;
   height: 24px;
   background-color: #337ab7;
-
 }
-
 
 .q:hover {
   background-color: #f5f5f5;
